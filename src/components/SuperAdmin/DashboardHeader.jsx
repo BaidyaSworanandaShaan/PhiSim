@@ -1,5 +1,6 @@
 import React from "react";
 import { Plus, LogOut, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function DashboardHeader({ onRegisterClick, onLogoutClick }) {
   return (
@@ -14,22 +15,17 @@ export default function DashboardHeader({ onRegisterClick, onLogoutClick }) {
 
           {/* Title and subtitle */}
           <div>
-            <h1 className="text-xl font-semibold  text-slate-900">
+            <Link
+              to="/superadmin/dashboard"
+              className="text-xl font-semibold text-slate-900 hover:text-blue-600 transition-colors"
+            >
               Superadmin Dashboard
-            </h1>
+            </Link>
           </div>
         </div>
 
         {/* Right side: Buttons */}
         <div className="flex items-center gap-3">
-          <button
-            onClick={onRegisterClick}
-            className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-2 rounded-lg hover:from-blue-700 hover:to-blue-600 transition-colors font-medium shadow-md"
-          >
-            <Plus size={20} />
-            Register Admin
-          </button>
-
           <button
             onClick={onLogoutClick}
             className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg transition-colors font-medium shadow-md"
